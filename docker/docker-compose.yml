@@ -17,15 +17,15 @@ services:
 
   frappe:
     image: frappe/bench:latest
-    command: bash "pwd && ls-a"
+    command: bash /workspace/init.sh
     environment:
       - SHELL=/bin/bash
     working_dir: /home/frappe
     volumes:
       - .:/workspace
     ports:
-      - 8770:8000
-      - 9770:9000
+      - 8000:8000
+      - 9000:9000
 
 volumes:
   mariadb-data:
