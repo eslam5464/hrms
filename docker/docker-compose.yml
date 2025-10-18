@@ -17,7 +17,7 @@ services:
 
   frappe:
     image: frappe/bench:latest
-    command: ls && bash /workspace/init.sh
+    command: ls || echo "test"
     environment:
       - SHELL=/bin/bash
     working_dir: /home/frappe
